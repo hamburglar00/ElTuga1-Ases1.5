@@ -59,11 +59,11 @@
 /*************** CONFIGURACIÓN ***************/
 const CONFIG_FRONT = {
   SERVICE_URL: "/api/get-random-phone",
-  FALLBACK: [{ number: "5493515607180", name: "Soporte Gaston", weight: 1 }],
+  FALLBACK: [{ number: "5493515607180", name: "Soporte Sofia", weight: 1 }],
   TTL_MS: 5*60*1000,
-  LS_KEY: "active_whatsapp_numbers:gastonases",
+  LS_KEY: "active_whatsapp_numbers:sofiases",
   ENVIAR_PROMO_CODE: true,
-  LANDING_TAG: "GT1"
+  LANDING_TAG: "TU1"
 };
 
 /*************** FUNCIONES AUXILIARES ***************/
@@ -73,7 +73,7 @@ function fetchWithTimeout(url,opt={},ms=3000){
 }
 function getCache(){try{return JSON.parse(localStorage.getItem(CONFIG_FRONT.LS_KEY)||"null");}catch{return null;}}
 function setCache(numbers){localStorage.setItem(CONFIG_FRONT.LS_KEY,JSON.stringify({ts:Date.now(),numbers}));}
-function normalizeNumbers(list){return(Array.isArray(list)?list:[]).map(n=>({number:String(n.number||n.phone||"").trim(),weight:Number(n.weight||1),name:n.name||"Gaston"})).filter(n=>/^\+?\d{8,17}$/.test(n.number));}
+function normalizeNumbers(list){return(Array.isArray(list)?list:[]).map(n=>({number:String(n.number||n.phone||"").trim(),weight:Number(n.weight||1),name:n.name||"Sofi"})).filter(n=>/^\+?\d{8,17}$/.test(n.number));}
 async function loadNumbersOnce(){
   const cached=getCache();
   try{
