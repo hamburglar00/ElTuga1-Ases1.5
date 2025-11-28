@@ -56,7 +56,7 @@ export default async function handler(req, res) {
     console.error("❌ Error al obtener número:", err.message);
     return res.status(200).json({
       number: "549351",
-      name: "Soporte Hector",
+      name: "Soporte Sofi",
       agency_id: "fallback",
       weight: 1,
     });
